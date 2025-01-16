@@ -7,19 +7,118 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
         }
-        a {
+        h1 {
+            font-size: 2em;
+            color: white;
+            background-color: #005500;
+            padding: 20px;
+            margin: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        /* Styling the search section */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        .search-container input {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #005500;
+            border-radius: 5px 0 0 5px;
+            width: 300px;
+        }
+        .search-container button {
+            padding: 10px 15px;
+            font-size: 1em;
+            background-color: #005500;
+            color: white;
+            border: 2px solid #005500;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #003300;
+        }
+
+        /* Styling the dropdown list */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 10;
+        }
+        .dropdown a {
+            padding: 10px;
+            display: block;
             color: #005500;
             text-decoration: none;
         }
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+        ul {
+            padding: 20px;
+            list-style-type: none;
+            margin: 0;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 12px;
+            padding: 10px;
+            background-color: #eaf6e6;
+            border-left: 5px solid #005500;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        li:hover {
+            background-color: #c1e8c1;
+        }
+        a {
+            color: #005500;
+            font-size: 1.1em;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
         a:hover {
             text-decoration: underline;
+            color: #003300;
         }
+
     </style>
 </head>
 <body>
-    <h1>IOCL Una Terminal Routes</h1>
-    <ul>
+    <h1>
+        <img src=D:\iocl.bmp alt="Logo" class="logo">
+        IOCL Una Terminal Routes
+    </h1>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search routes..." onkeyup="showSuggestions()">
+        <button onclick="searchRoute()">Search</button>
+        <div id="dropdown" class="dropdown"></div>
+    </div>
+    <ul id="route-list">
         <li><a href="Map_VERMA FILLING STATION-860.html">VERMA FILLING STATION-860</a></li>
         <li><a href="Map_TRANG FILLING STATION.html">TRANG FILLING STATION</a></li>
         <li><a href="Map_THE KAILASH DISTTCOOP SO.html">THE KAILASH DISTTCOOP SO</a></li>
@@ -70,5 +169,86 @@
         <li><a href="Map_ABHINAV KISSAN SEWA KENDRA.html">ABHINAV KISSAN SEWA KENDRA</a></li>
         <li><a href="Map_AANAND FUEL CENTER.html">AANAND FUEL CENTER</a></li>
     </ul>
+
+    <script>
+        var routes = [
+            "VERMA FILLING STATION-860",
+            "TRANG FILLING STATION",
+            "THE KAILASH DISTTCOOP SO",
+            "TANAIK FILLING STATION",
+            "SWAROOP SERVICE STATION",
+            "SUPREME PETROLEUM",
+            "SHIVAY FUEL STATION",
+            "SHIV SHAKTI FILLING STATION",
+            "SHIV HARI KSK",
+            "SHAHEED ASHWANI CHANDEL FSTATION",
+            "SATLUJ FILLING STATION",
+            "SAINI FILLING STATION",
+            "RENUKAJI FILLING STATION",
+            "RAJSHREE FILLING STATION",
+            "RAJ FILLING STATION",
+            "RAGHUKUL FILLING STATION",
+            "RADHA SOAMI SERVICE STATION",
+            "PURI BROTHERS-KULLU",
+            "PRERNA KISSAN SEWA KENDRA",
+            "PARKASH FILLING STATION-843",
+            "NIRMAL FILLING STATION",
+            "NEXT GEN FILLING STATION",
+            "NARKANDA FILLING STATION",
+            "MOHRI FILLING STATION",
+            "MEENA FUEL STATION",
+            "MARS FUEL POINT",
+            "MAHESHWAR KISSAN SEWA KENDRA",
+            "MAA JAWALAJI KSK",
+            "JAI LANKAR KHER FILLING STATION",
+            "HPAICL KHAYLAGE",
+            "HIMFED FILLING STATION-862",
+            "HIMFED FILLING STATION",
+            "HIMACHAL PRADESH STATE CO-OP M",
+            "GUPTA KISSAN SEWA KENDRA",
+            "EBAY ENTERPRISES",
+            "DUTTA SERVICE STATION-818",
+            "D.D.MEHTA",
+            "CHAUHAN FILLING STATION",
+            "CHAMUNDA FILLING STATION(GUTKAR)",
+            "BIJLI MAHADEV FILLING STATION",
+            "BHALEI FILLING STATION-807",
+            "BHAGWATI FILLING STATION",
+            "BARSHI KSK",
+            "BAGLAMUKHI FILLING STN-803",
+            "BABA BALAKNATH FILLING STATION",
+            "B.K ENTERPRISES",
+            "ABHINAV KISSAN SEWA KENDRA",
+            "AANAND FUEL CENTER"
+        ];
+
+        function showSuggestions() {
+            var input = document.getElementById('search').value.toLowerCase();
+            var dropdown = document.getElementById('dropdown');
+            dropdown.innerHTML = '';  // Clear the current dropdown
+            if (input === '') {
+                dropdown.style.display = 'none';
+                return;
+            }
+            var filteredRoutes = routes.filter(function(route) {
+                return route.toLowerCase().includes(input);
+            });
+            if (filteredRoutes.length > 0) {
+                dropdown.style.display = 'block';
+                filteredRoutes.forEach(function(route) {
+                    var suggestion = document.createElement('a');
+                    suggestion.href = "Map_" + route.replace(/ /g, "_") + ".html";
+                    suggestion.textContent = route;
+                    dropdown.appendChild(suggestion);
+                });
+            } else {
+                dropdown.style.display = 'none';
+            }
+        }
+
+        function searchRoute() {
+            alert('Searching for: ' + document.getElementById('search').value);
+        }
+    </script>
 </body>
 </html>
