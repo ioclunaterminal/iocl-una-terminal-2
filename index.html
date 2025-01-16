@@ -16,6 +16,7 @@
             color: white;
             background-color: #005500;
             padding: 20px;
+            text-align: center;
             margin: 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -170,85 +171,92 @@
         <li><a href="Map_AANAND FUEL CENTER.html">AANAND FUEL CENTER</a></li>
     </ul>
 
+ 
     <script>
-        var routes = [
-            "VERMA FILLING STATION-860",
-            "TRANG FILLING STATION",
-            "THE KAILASH DISTTCOOP SO",
-            "TANAIK FILLING STATION",
-            "SWAROOP SERVICE STATION",
-            "SUPREME PETROLEUM",
-            "SHIVAY FUEL STATION",
-            "SHIV SHAKTI FILLING STATION",
-            "SHIV HARI KSK",
-            "SHAHEED ASHWANI CHANDEL FSTATION",
-            "SATLUJ FILLING STATION",
-            "SAINI FILLING STATION",
-            "RENUKAJI FILLING STATION",
-            "RAJSHREE FILLING STATION",
-            "RAJ FILLING STATION",
-            "RAGHUKUL FILLING STATION",
-            "RADHA SOAMI SERVICE STATION",
-            "PURI BROTHERS-KULLU",
-            "PRERNA KISSAN SEWA KENDRA",
-            "PARKASH FILLING STATION-843",
-            "NIRMAL FILLING STATION",
-            "NEXT GEN FILLING STATION",
-            "NARKANDA FILLING STATION",
-            "MOHRI FILLING STATION",
-            "MEENA FUEL STATION",
-            "MARS FUEL POINT",
-            "MAHESHWAR KISSAN SEWA KENDRA",
-            "MAA JAWALAJI KSK",
-            "JAI LANKAR KHER FILLING STATION",
-            "HPAICL KHAYLAGE",
-            "HIMFED FILLING STATION-862",
-            "HIMFED FILLING STATION",
-            "HIMACHAL PRADESH STATE CO-OP M",
-            "GUPTA KISSAN SEWA KENDRA",
-            "EBAY ENTERPRISES",
-            "DUTTA SERVICE STATION-818",
-            "D.D.MEHTA",
-            "CHAUHAN FILLING STATION",
-            "CHAMUNDA FILLING STATION(GUTKAR)",
-            "BIJLI MAHADEV FILLING STATION",
-            "BHALEI FILLING STATION-807",
-            "BHAGWATI FILLING STATION",
-            "BARSHI KSK",
-            "BAGLAMUKHI FILLING STN-803",
-            "BABA BALAKNATH FILLING STATION",
-            "B.K ENTERPRISES",
-            "ABHINAV KISSAN SEWA KENDRA",
-            "AANAND FUEL CENTER"
+        const stations = [
+            { name: "VERMA FILLING STATION-860", url: "Map_VERMA FILLING STATION-860.html" },
+            { name: "TRANG FILLING STATION", url: "Map_TRANG FILLING STATION.html" },
+            { name: "THE KAILASH DISTTCOOP SO", url: "Map_THE KAILASH DISTTCOOP SO.html" },
+            { name: "TANAIK FILLING STATION", url: "Map_TANAIK FILLING STATION.html" },
+            { name: "SWAROOP SERVICE STATION", url: "Map_SWAROOP SERVICE STATION.html" },
+            { name: "SUPREME PETROLEUM", url: "Map_SUPREME PETROLEUM.html" },
+            { name: "SHIVAY FUEL STATION", url: "Map_SHIVAY FUEL STATION.html" },
+            { name: "SHIV SHAKTI FILLING STATION", url: "Map_SHIV SHAKTI FILLING STATION.html" },
+            { name: "SHIV HARI KSK", url: "Map_SHIV HARI KSK.html" },
+            { name: "SHD. MANGAL SINGH FSTATION", url: "Map_SHD. MANGAL SINGH FSTATION.html" },
+            { name: "SHAHEED ASHWANI CHANDEL FSTATION", url: "Map_SHAHEED ASHWANI CHANDEL FSTATION.html" },
+            { name: "SATLUJ FILLING STATION", url: "Map_SATLUJ FILLING STATION.html" },
+            { name: "SAINI FILLING STATION", url: "Map_SAINI FILLING STATION.html" },
+            { name: "RENUKAJI FILLING STATION", url: "Map_RENUKAJI FILLING STATION.html" },
+            { name: "RAJSHREE FILLING STATION", url: "Map_RAJSHREE FILLING STATION.html" },
+            { name: "RAJ FILLING STATION", url: "Map_RAJ FILLING STATION.html" },
+            { name: "RAGHUKUL FILLING STATION", url: "Map_RAGHUKUL FILLING STATION.html" },
+            { name: "RADHA SOAMI SERVICE STATION", url: "Map_RADHA SOAMI SERVICE STATION.html" },
+            { name: "PURI BROTHERS-KULLU", url: "Map_PURI BROTHERS-KULLU.html" },
+            { name: "PRERNA KISSAN SEWA KENDRA", url: "Map_PRERNA KISSAN SEWA KENDRA.html" },
+            { name: "PARKASH FILLING STATION-843", url: "Map_PARKASH FILLING STATION-843.html" },
+            { name: "NIRMAL FILLING STATION", url: "Map_NIRMAL FILLING STATION.html" },
+            { name: "NEXT GEN FILLING STATION", url: "Map_NEXT GEN FILLING STATION.html" },
+            { name: "NARKANDA FILLING STATION", url: "Map_NARKANDA FILLING STATION.html" },
+            { name: "MOHRI FILLING STATION", url: "Map_MOHRI FILLING STATION.html" },
+            { name: "MEENA FUEL STATION", url: "Map_MEENA FUEL STATION.html" },
+            { name: "MARS FUEL POINT", url: "Map_MARS FUEL POINT.html" },
+            { name: "MAHESHWAR KISSAN SEWA KENDRA", url: "Map_MAHESHWAR KISSAN SEWA KENDRA.html" },
+            { name: "MAA JAWALAJI KSK", url: "Map_MAA JAWALAJI KSK.html" },
+            { name: "JAI LANKAR KHER FILLING STATION", url: "Map_JAI LANKAR KHER FILLING STATION.html" },
+            { name: "HPAICL KHAYLAGE", url: "Map_HPAICL KHAYLAGE.html" },
+            { name: "HIMFED FILLING STATION-862", url: "Map_HIMFED FILLING STATION-862.html" },
+            { name: "HIMFED FILLING STATION", url: "Map_HIMFED FILLING STATION.html" },
+            { name: "HIMACHAL PRADESH STATE CO-OP M", url: "Map_HIMACHAL PRADESH STATE CO-OP M.html" },
+            { name: "GUPTA KISSAN SEWA KENDRA", url: "Map_GUPTA KISSAN SEWA KENDRA.html" },
+            { name: "EBAY ENTERPRISES", url: "Map_EBAY ENTERPRISES.html" },
+            { name: "DUTTA SERVICE STATION-818", url: "Map_DUTTA SERVICE STATION-818.html" },
+            { name: "D.D.MEHTA", url: "Map_D.D.MEHTA.html" },
+            { name: "CHAUHAN FILLING STATION", url: "Map_CHAUHAN FILLING STATION.html" },
+            { name: "CHAMUNDA FILLING STATION(GUTKAR)", url: "Map_CHAMUNDA FILLING STATION(GUTKAR).html" },
+            { name: "BIJLI MAHADEV FILLING STATION", url: "Map_BIJLI MAHADEV FILLING STATION.html" },
+            { name: "BHALEI FILLING STATION-807", url: "Map_BHALEI FILLING STATION-807.html" },
+            { name: "BHAGWATI FILLING STATION", url: "Map_BHAGWATI FILLING STATION.html" },
+            { name: "BARSHI KSK", url: "Map_BARSHI KSK.html" },
+            { name: "BAGLAMUKHI FILLING STN-803", url: "Map_BAGLAMUKHI FILLING STN-803.html" },
+            { name: "BABA BALAKNATH FILLING STATION", url: "Map_BABA BALAKNATH FILLING STATION.html" },
+            { name: "B.K ENTERPRISES", url: "Map_B.K ENTERPRISES.html" },
+            { name: "ABHINAV KISSAN SEWA KENDRA", url: "Map_ABHINAV KISSAN SEWA KENDRA.html" },
+            { name: "AANAND FUEL CENTER", url: "Map_AANAND FUEL CENTER.html" }
         ];
+	const searchInput = document.getElementById('search');
+        const dropdown = document.getElementById('dropdown');
 
-        function showSuggestions() {
-            var input = document.getElementById('search').value.toLowerCase();
-            var dropdown = document.getElementById('dropdown');
-            dropdown.innerHTML = '';  // Clear the current dropdown
-            if (input === '') {
-                dropdown.style.display = 'none';
-                return;
-            }
-            var filteredRoutes = routes.filter(function(route) {
-                return route.toLowerCase().includes(input);
-            });
-            if (filteredRoutes.length > 0) {
-                dropdown.style.display = 'block';
-                filteredRoutes.forEach(function(route) {
-                    var suggestion = document.createElement('a');
-                    suggestion.href = "Map_" + route.replace(/ /g, "_") + ".html";
-                    suggestion.textContent = route;
-                    dropdown.appendChild(suggestion);
-                });
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+            dropdown.innerHTML = '';
+
+            if (query) {
+                const filteredStations = stations.filter(station =>
+                    station.name.toLowerCase().includes(query)
+                );
+
+                if (filteredStations.length > 0) {
+                    dropdown.style.display = 'block'; // Show results dropdown
+                    filteredStations.forEach(station => {
+                        const a = document.createElement('a');
+                        a.textContent = station.name;
+                        a.href = station.url;
+                        dropdown.appendChild(a);
+                    });
+                } else {
+                    dropdown.style.display = 'none'; // Hide if no results
+                }
             } else {
-                dropdown.style.display = 'none';
+                dropdown.style.display = 'none'; // Hide results if input is empty
             }
-        }
+        });
 
-        function searchRoute() {
-            alert('Searching for: ' + document.getElementById('search').value);
-        }
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.search-container')) {
+                dropdown.style.display = 'none'; // Hide dropdown when clicking outside
+            }
+        });
     </script>
 </body>
 </html>
