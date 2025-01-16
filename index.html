@@ -7,13 +7,73 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        a {
-            color: #005500;
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        nav {
+            background-color: #0055a5;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
             text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
         }
-        a:hover {
+        nav a:hover {
+            background-color: #0073e6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        ul li a {
+            color: #0055a5;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        ul li a:hover {
             text-decoration: underline;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
